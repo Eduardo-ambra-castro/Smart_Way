@@ -1,0 +1,241 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #202b3c;
+}
+
+/* CABEÇALHO */
+.site-header {
+    background-color: #101b2d;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    color: #42a5f5;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #42a5f5;
+}
+
+/* ÁREA DE CONTATO */
+.contato {
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* FORMULÁRIO E ACESSIBILIDADE */
+.formulario,
+.acessibilidade {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.formulario h2,
+.acessibilidade h2 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.formulario p,
+.acessibilidade p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* CAMPOS */
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* OPÇÕES DE ACESSIBILIDADE */
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.opcao input {
+    width: 17px;
+    height: 17px;
+}
+
+/* BOTÕES */
+button {
+    padding: 12px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #12569a;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #101b2d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/*  CONTATO */
+.coluna-direita {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.coluna-direita .acessibilidade {
+    width: 100%;
+}
+
+.campo select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* acessibilidade nas estações  */
+.cartao-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.cartao-info h2 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.cartao-info h3 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.tabela-acess {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-acess th {
+    background-color: #1976d2;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabela-acess td {
+    padding: 10px;
+    border-bottom: 1px solid #e3e8ef;
+}
+
+.tabela-acess tbody tr:nth-child(even) {
+    background-color: #f4f7fb;
+}
+
+.tabela-acess tbody tr {
+    transition: background-color 0.3s;
+}
+
+.tabela-acess tbody tr:hover {
+    background-color: #dce9fb;
+}
+
+.dicas {
+    padding-left: 20px;
+}
+
+.dicas li {
+    margin-bottom: 6px;
+}
+
+.dicas li::marker {
+    color: #1976d2;
+}
+
+/*  PÁGINA SOBRE */
+.sobre {
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sobre section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.sobre h2 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.sobre p {
+    line-height: 1.5;
+}
+
+.sobre ul,
+.sobre ol {
+    padding-left: 20px;
+    line-height: 1.8;
+}

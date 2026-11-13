@@ -1,241 +1,388 @@
-/* CONFIGURAÇÕES GERAIS */
+/* ---------- 1. Variáveis ---------- */
+:root {
+    --cor-fundo: #ffffff;          
+    --cor-fundo-2: #f5f5f7;       
+    --cor-cartao: #f5f5f7;       
+    --cor-borda: #d2d2d7;          
+    --cor-texto: #1d1d1f;          
+    --cor-texto-suave: #6e6e73;    
+    --cor-titulo: #1d1d1f;        
+    --cor-principal: #c28770;      
+    --cor-texto-botao: #ffffff;    
+    --cor-sucesso: #28cd41;        
+
+    --fonte-titulo: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    --fonte-texto: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+}
+
+/* ---------- 2. Base ---------- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* padding e borda entram na largura da caixa */
+}
+
+/* A página ocupa exatamente a altura da janela.
+   O body é uma coluna: cabeçalho, conteúdo (main) e rodapé. */
+html,
+body {
+    height: 100%;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    color: #202b3c;
-}
-
-/* CABEÇALHO */
-.site-header {
-    background-color: #101b2d;
-    color: white;
-    padding: 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-.site-header h1 {
-    color: #42a5f5;
-}
-
-nav {
+/* O main cresce e ocupa o espaço que sobra entre o cabeçalho e o rodapé.
+   A barra de rolagem só aparece se o conteúdo for mais alto que a janela. */
+main {
+    flex-grow: 1;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    overflow: auto;
 }
 
-nav a {
-    color: white;
+h1,
+h2 {
+    color: var(--cor-titulo);
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--cor-principal);
     text-decoration: none;
 }
 
-nav a:hover {
-    color: #42a5f5;
+img {
+    max-width: 100%;
 }
 
-/* ÁREA DE CONTATO */
-.contato {
-    width: 85%;
-    margin: 50px auto;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.destaque {
+    color: var(--cor-principal);
+}
+
+
+/* ---------- 3. Cabeçalho e menu ---------- */
+.cabecalho {
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho .container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
 }
 
-/* FORMULÁRIO E ACESSIBILIDADE */
-.formulario,
-.acessibilidade {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    width: 50%;
-}
-
-.formulario h2,
-.acessibilidade h2 {
-    color: #1976d2;
-    margin-bottom: 15px;
-}
-
-.formulario p,
-.acessibilidade p {
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* CAMPOS */
-.campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-}
-
-.campo label {
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-.campo input,
-.campo textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-}
-
-/* OPÇÕES DE ACESSIBILIDADE */
-.opcao {
+.marca {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
+    color: var(--cor-titulo);
+    font-family: var(--fonte-titulo);
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.opcao input {
-    width: 17px;
-    height: 17px;
+.marca img {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
 }
 
-/* BOTÕES */
-button {
-    padding: 12px 20px;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 4px;
+}
+
+.menu-link {
+    display: block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: var(--cor-texto-suave);
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.menu-link:hover {
+    background-color: var(--cor-fundo-2);
+    color: var(--cor-titulo);
+}
+
+/* Link da página em que o usuário está */
+.menu-link-ativo,
+.menu-link-ativo:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-botao);
+}
+
+
+/* ---------- 4. Tela ----------
+   Bloco que ocupa todo o main e centraliza o conteúdo na vertical. */
+.tela {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.tela-fundo-2 {
+    background-color: var(--cor-fundo-2);
+}
+
+
+/* ---------- 5. Textos ---------- */
+.estacao {
+    display: flex;
+    align-items: center;
+    color: var(--cor-principal);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Bolinha que lembra uma estação no mapa do metrô */
+.estacao::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border: 3px solid var(--cor-principal);
+    border-radius: 50%;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    color: var(--cor-texto-suave);
+    font-size: 13px;
+}
+
+.titulo {
+    margin: 10px 0;
+    font-size: 36px;
+}
+
+.resumo {
+    max-width: 640px;
+    margin-bottom: 14px;
+    color: var(--cor-texto-suave);
+    font-size: 17px;
+}
+
+.subtitulo {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.texto-apoio {
+    margin-bottom: 14px;
+    color: var(--cor-texto-suave);
+    font-size: 15px;
+}
+
+
+/* ---------- 6. Botão ---------- */
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--cor-principal);
+    border-radius: 30px;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-botao);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
+    transition: 0.2s;
 }
 
-button:hover {
-    background-color: #12569a;
+.botao:hover {
+    background-color: var(--cor-titulo);
+    border-color: var(--cor-titulo);
 }
 
-.botoes {
+
+/* ---------- 7. Página inicial ---------- */
+.inicio {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-/* RODAPÉ */
-footer {
-    background-color: #101b2d;
-    color: white;
+/* flex: cresce (1), encolhe (1) e tem 400px como largura de partida.
+   Quando as duas colunas não cabem lado a lado, a imagem desce. */
+.inicio-texto,
+.inicio-imagem {
+    flex: 1 1 400px;
+    margin: 15px 0;
+}
+
+.inicio-texto {
+    margin-right: 30px;
+}
+
+.inicio-texto h1 {
+    margin: 20px 0;
+    font-size: 48px;
+}
+
+.inicio-texto p {
+    margin-bottom: 24px;
+    color: var(--cor-texto-suave);
+    font-size: 18px;
+}
+
+.inicio-imagem img {
+    display: block;
+    width: 100%;
+    border-radius: 24px;
+}
+
+.inicio-imagem figcaption {
+    margin-top: 8px;
+    color: var(--cor-texto-suave);
+    font-size: 13px;
     text-align: center;
-    padding: 25px;
 }
 
-/*  CONTATO */
-.coluna-direita {
-    width: 50%;
+
+/* ---------- 8. Página de contato (duas colunas) ---------- */
+/* A margem negativa compensa a margem das colunas,
+   para que elas fiquem alinhadas com o título da página. */
+.colunas {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-wrap: wrap;
+    margin: 0 -15px;
 }
 
-.coluna-direita .acessibilidade {
+.coluna {
+    flex: 1 1 400px;
+    margin: 0 15px;
+}
+
+
+/* ---------- 9. Formulários ---------- */
+.formulario label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--cor-titulo);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+    display: block;
     width: 100%;
+    margin-bottom: 14px;
+    padding: 10px 14px;
+    background-color: var(--cor-campo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
 }
 
-.campo select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    background-color: white;
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--cor-principal);
 }
 
-/* acessibilidade nas estações  */
-.cartao-info {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+/* Caixa de autorização: checkbox e texto lado a lado */
+.aceite {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
 }
 
-.cartao-info h2 {
-    color: #1976d2;
-    margin-bottom: 15px;
+/* O checkbox não segue o estilo dos outros campos */
+.formulario input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 3px 10px 0 0;
+    padding: 0;
 }
 
-.cartao-info h3 {
-    margin-top: 24px;
-    margin-bottom: 10px;
+.aceite label {
+    margin-bottom: 0;
+    color: var(--cor-texto-suave);
+    font-weight: 400;
 }
 
-.tabela-acess {
-    width: 100%;
-    border-collapse: collapse;
+/* Mensagem que aparece depois de enviar um formulário.
+   O formulário leva para o id da mensagem (ex.: "#enviado"),
+   e a pseudo-classe :target mostra o elemento que tem esse id. */
+.aviso {
+    display: none;
     margin-top: 10px;
+    color: var(--cor-sucesso);
+    font-size: 15px;
 }
 
-.tabela-acess th {
-    background-color: #1976d2;
-    color: white;
-    padding: 10px;
-    text-align: left;
+.aviso:target {
+    display: block;
 }
 
-.tabela-acess td {
-    padding: 10px;
-    border-bottom: 1px solid #e3e8ef;
+
+/* ---------- 10. Rodapé ---------- */
+.rodape {
+    background-color: var(--cor-fundo-2);
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    font-size: 13px;
 }
 
-.tabela-acess tbody tr:nth-child(even) {
-    background-color: #f4f7fb;
-}
-
-.tabela-acess tbody tr {
-    transition: background-color 0.3s;
-}
-
-.tabela-acess tbody tr:hover {
-    background-color: #dce9fb;
-}
-
-.dicas {
-    padding-left: 20px;
-}
-
-.dicas li {
-    margin-bottom: 6px;
-}
-
-.dicas li::marker {
-    color: #1976d2;
-}
-
-/*  PÁGINA SOBRE */
-.sobre {
-    width: 85%;
-    margin: 50px auto;
+.rodape .container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
 }
 
-.sobre section {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
+.rodape p {
+    margin: 2px 0;
 }
 
-.sobre h2 {
-    color: #1976d2;
-    margin-bottom: 15px;
+.rodape a {
+    color: var(--cor-texto-suave);
+    transition: 0.2s;
 }
 
-.sobre p {
-    line-height: 1.5;
-}
-
-.sobre ul,
-.sobre ol {
-    padding-left: 20px;
-    line-height: 1.8;
+.rodape a:hover {
+    color: var(--cor-principal);
+    text-decoration: underline;
 }

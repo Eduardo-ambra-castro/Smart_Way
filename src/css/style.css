@@ -139,7 +139,7 @@ img {
 
 
 /* Tela */
-   Bloco que ocupa todo o main e centraliza o conteúdo na vertical. */
+/* Bloco que ocupa todo o main e centraliza o conteúdo na vertical. */
 .tela {
     flex-grow: 1;
     display: flex;
@@ -237,3 +237,11 @@ img {
     text-decoration: underline;
 }
 
+
+.imagem_problema {
+    display: flex;
+    width: 80%;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}

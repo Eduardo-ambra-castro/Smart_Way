@@ -1,13 +1,13 @@
 /* ---------- 1. Variáveis ---------- */
 :root {
-    --cor-fundo: #ffffff;          
-    --cor-fundo-2: #f5f5f7;       
-    --cor-cartao: #f5f5f7;       
-    --cor-borda: #d2d2d7;          
+    --cor-fundo: #dadaf3;          
+    --cor-fundo-2: #dadaf3;       
+    --cor-cartao: #ffffff;       
+    --cor-borda: #ffffff;          
     --cor-texto: #1d1d1f;          
     --cor-texto-suave: #6e6e73;    
     --cor-titulo: #1d1d1f;        
-    --cor-principal: #c28770;      
+    --cor-principal: #5160e4;      
     --cor-texto-botao: #ffffff;    
     --cor-sucesso: #28cd41;        
 
@@ -15,11 +15,10 @@
     --fonte-texto: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
 }
 
-/* Base */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* padding e borda entram na largura da caixa */
+    box-sizing: border-box;
 }
 
 
@@ -77,7 +76,6 @@ img {
 }
 
 
-/* Cabeçalho e menu */
 .cabecalho {
     border-bottom: 1px solid var(--cor-borda);
 }
@@ -130,7 +128,7 @@ img {
     color: var(--cor-titulo);
 }
 
-/* Link da página em que o usuário está */
+
 .menu-link-ativo,
 .menu-link-ativo:hover {
     background-color: var(--cor-principal);
@@ -138,8 +136,6 @@ img {
 }
 
 
-/* Tela */
-/* Bloco que ocupa todo o main e centraliza o conteúdo na vertical. */
 .tela {
     flex-grow: 1;
     display: flex;
@@ -153,7 +149,6 @@ img {
 }
 
 
-/*  Textos */
 .estacao {
     display: flex;
     align-items: center;
@@ -165,7 +160,6 @@ img {
 }
 
 
-/* Página inicial */
 .inicio {
     display: flex;
     flex-wrap: wrap;
@@ -207,7 +201,6 @@ img {
 }
 
 
-/*  Rodapé */
 .rodape {
     background-color: var(--cor-fundo-2);
     border-top: 1px solid var(--cor-borda);
@@ -238,6 +231,12 @@ img {
 }
 
 
+.tela-inicial {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.521), rgba(255, 255, 255, 0.527)), url("../assets/inicio.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 .imagem_problema {
     display: flex;
     width: 80%;
@@ -245,3 +244,36 @@ img {
     margin: 0 auto;
     margin-bottom: 40px;
 }
+
+.imagem_beneficios {
+    display: flex;
+    width: 80%;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.imagem_objetivos {
+    display: flex;
+    width: 80%;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.imagem_publico_alvo{
+    display: flex;
+    width: 80%;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.imagem_tecnologia {
+    display: flex;
+    width: 80%;
+    border-radius: 24px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
